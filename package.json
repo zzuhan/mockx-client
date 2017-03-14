@@ -15,8 +15,9 @@
     "electron": "^1.4.1"
   },
   "scripts": {
-    "start": "/Users/hanwencheng/devspace/mockx-webserve/weber/admin/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
+    "start": "./node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
     "package": "asar pack Mockx-darwin-x64/Mockx.app/Contents/Resources/app Mockx-darwin-x64/Mockx.app/Contents/Resources/app.asar",
-    "build": "electron-packager . Mockx --overwrite"
+    "build": "electron-packager . Mockx --overwrite --icon=Mockx.icns",
+    "dmg": "electron-installer-dmg Mockx-darwin-x64/Mockx.app Mockx --overwrite"
   }
 }

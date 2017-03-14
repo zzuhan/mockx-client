@@ -1,0 +1,38 @@
+{
+	"success": true,
+	"message": "这是消息",
+	"data": {
+		"mainPlan": {
+			"id": 12,
+			"sellerId": 3813.307,
+			"actType": 6334.63,
+			"signObject": false,
+			"categoryId": 1883,
+			"brandId": 9131.3,
+			"itemId": 1683.54,
+			"itemDesc": "韩国正品SD发膜曲奇secreta",
+			"status": 7357.5,
+			"expectOnlineTime": 1771.3,
+			"preOnlineTime": 795.9,
+			"pitId": 4058.26,
+			"activityId": 1001.6,
+			"productId": 8
+		},
+		"corpPlans": [{
+			"id": 1,
+			"sellerId": 4233.465,
+			"actType": 2084.8,
+			"signObject": true,
+			"categoryId": 4912.95,
+			"brandId": 9545.3,
+			"itemId": 2974.02,
+			"itemDesc": "T7407泰福高耐热玻璃饭盒圆形密封保鲜盒微波便当盒冰箱烤箱专用 四件套装新款可爱动物不锈钢荷包蛋煎蛋器煎蛋模",
+			"status": 9736.56,
+			"expectOnlineTime": 3516.7,
+			"preOnlineTime": 2435.5,
+			"pitId": 6242.5,
+			"activityId": 3805,
+			"productId": 5
+		}]
+	}
+}

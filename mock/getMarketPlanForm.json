@@ -1,0 +1,43 @@
+{
+	"success": true,
+	"message": "这是消息",
+	"data": [{
+		"groupName": "基础信息",
+		"formElements": [{
+			"infoKey": "sale",
+			"required": true,
+			"values": {
+				"sale": 100
+			}
+		}, {
+			"infoKey": "zhannei",
+			"required": true,
+			"values": {
+				"zhannei": ["zhannei", "youhui", "baoyou"],
+				"youhui_price": "100"
+			}
+		}, {
+			"infoKey": "promption",
+			"required": true,
+			"values": {
+				"promption": "这是一段促销的文案"
+			}
+		}, {
+			"infoKey": "attachment",
+			"values": {
+				"attachment": "https://img.alicdn.com/tps/TB19O79MVXXXXcZXVXXXXXXXXXX-1024-1024.jpg"
+			}
+		}]
+		}, {
+			"groupName": "超级品牌日",
+			"formElements": [{
+				"infoKey": "lianhe",
+				"text": "联合投放",
+				"required": true,
+				"values": {
+					"lianhe": ["offline", "app"],
+					"lianheOther": "这是其他的信息"
+				}
+			}]
+		}]
+}

@@ -91,7 +91,7 @@ function stop(){
     sudoer.spawn('node', ['./kill.js', child.pid, 'SIGINT']).then(function (cp) {
         console.log('run done');
 
-        // cp.stdout.pipe(process.stdout);
+        cp.stdout.pipe(process.stdout);
     });
 
     // child.kill('SIGINT');

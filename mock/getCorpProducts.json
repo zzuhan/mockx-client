@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "available": true,
+    "list": [
+      {
+        "currentProductRight": {
+          "leftRights": 7,
+          "time": "2017年",
+          "totalRights": 9
+        },
+        "hasRights": true,
+        "logo": "//img.daily.taobaocdn.net/bao/uploaded/i3/T1PadcXj8EXXb152k5_055548.jpg_80x80.jpg",
+        "name": "量贩团",
+        "productId": 5,
+        "productTypes": ["brand", "product"],
+        "productRightVOs": [
+          
+        ]
+      }
+    ]
+  }
+}

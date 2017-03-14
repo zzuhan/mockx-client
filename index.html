@@ -147,7 +147,9 @@
 			
 			</div>
 			<div class="content">
-				<router-view></router-view>
+				<keep-alive>
+					<router-view></router-view>
+				</keep-alive>
 			</div>
 
 		</div>
@@ -195,7 +197,7 @@
 			<tbody>
 				<tr v-for="rule in rules">
 					<td>{{rule.route}}</td>
-					<td>{{rule.json}}</td>
+					<td>{{rule | formatResponse}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -229,6 +231,22 @@
 	<script>
 		var fs = require('fs');
 
+		Vue.filter('formatResponse', function(rule) {
+		  // if (value) {
+		  //   return moment(String(value)).format('MM/DD/YYYY hh:mm')
+		  // }
+		  console.log(rule);
+		  if(rule.json) {
+		  	return rule.json
+		  } else if(rule.jsdata) {
+		  	return rule.jsdata;
+		  } else if(rule.remote) {
+		  	return rule.remote;
+		  } else if(rule.file) {
+		  	return rule.file;
+		  }
+		});
+
 		// 配置页面
 		var Config = Vue.extend({
 			template: '#configTemplate',
@@ -259,7 +277,7 @@
 				editOrigin: function() {
 					var pathLib = require('path');
 					var childProcess = require('child_process');
-					var configFile = pathLib.join(__dirname, './config/mockx.js');
+					var configFile = pathLib.join(__dirname, './');
 					var cp = childProcess.spawn('open', [configFile]);
 				}
 			}
@@ -276,6 +294,11 @@
 					status: 'stopped'
 				};
 			},
+
+			// mounted: function() {
+			// 	console.log('invoke mounted');	
+			// },
+
 			mounted: function() {
 				var socket = require('socket.io-client')('http://127.0.0.1:3333');
 
@@ -293,14 +316,7 @@
 
 					_this.message += data.message;
 
-					// document.write(data.message)
 					return;
-					// message += data.message;
-					// if(testIfCompleteOne(message)) {
-					// 	message = build(message);
-					// 	_this.messages.push(message);
-					// 	message = '';
-					// }
 				});
 			},
 
@@ -313,7 +329,7 @@
 				stop: function() {
 					require('./mockx-manage.js').stop();
 					this.status = 'stopped';
-					this.message = '';
+					this.message = '关闭中，请忽略后面的信息';
 				},
 
 				start: function() {
